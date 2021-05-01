@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nevada's Roulette</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+	<h1>Nevada's Roulette</h1>
+	<br>
+	<div style="margin: auto; left: 10%; position: absolute; border: solid; border-width: 2px;">
+		<p>{Replace this with live camera's feed}</p>
+	</div>
+	<div style="margin: auto; left: 70%; position: absolute;">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th scope="col">Latest</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row" style="background-color: {{ latest.1 }}; color: white;">{{ latest.0 }}</th>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th scope="col">Results</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for i in color_li %}
+					<tr>
+						<th scope="row" style="background-color: {{ i.1 }}; color: white;">{{ i.0 }}</th>
+						<br>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
